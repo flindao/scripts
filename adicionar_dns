@@ -1,0 +1,33 @@
+Modo 1 (Edição) 
+--- Verificar Dns Atual } 
+cat /etc/resolv.conf
+
+--- Alterar Dns Atual }
+nano /etc/resolv.conf
+
+Modo 2 (Apagar,Adicionar)
+--- Apagar Lista Dns } 
+echo -n > /etc/resolv.conf
+
+--- Adicionar Dns } 
+
+Exemplo;
+
+echo nameserver 208.67.222.222 > /etc/resolv.conf
+echo nameserver 1.1.1.1 > /etc/resolv.conf
+echo nameserver 8.8.8.8 > /etc/resolv.conf
+
+Adicione no máximo três tipos de dns diferentes.
+
+--- Reiniciar Rede
+/etc/init.d/networking restart      
+
+Caso o dns adicionado não apareça apos reiniciar o servidor, salve com o chattr
+
+Exemplo;
+
+--- Bloquear Arquivo De Ser Reescrito
+chattr +i /etc/resolv.conf
+
+--- Desbloquear Arquivo Para Ser Reescrito
+chattr -i /etc/resolv.conf
