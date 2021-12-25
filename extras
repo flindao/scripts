@@ -1,0 +1,25 @@
+Os comandos abaixo são "extras"
+
+options rotate
+
+Define "rotate" em seleção round-robin de servidores de nomes entre aqueles listados. Isso tem o efeito de espalhar o carga de consulta entre todos os servidores listados, em vez de fazer com que todos os clientes tentem o primeiro servidor listado primeiro todas as vezes.
+
+options timeout
+
+Define a quantidade de tempo que o resolvedor aguardará por uma resposta de um servidor de nomes remoto antes de tentar novamente a consulta por meio de um servidor de nomes diferente. O valor para esta opção é silenciosamente limitado a 30s.
+
+options attemps 
+
+Define o número de vezes que o resolvedor enviará uma consultar em servidores de nomes antes de desistir e retornando um erro para o aplicativo de chamada. O valor para esta opção é silencioso limitado a 5s.
+
+--------
+Isso são apenas alguns módulos que podem ser adaptados para obter uma performance melhorada com o resolvedor padrão do sistema. para mais recursos sobre estudos de outras funções, está disponível no link abaixo.
+
+https://man7.org/linux/man-pages/man5/resolv.conf.5.html
+
+
+--- Fórmula Options
+options rotate timeout:1 attempts:5 inet use-vc single-request-reopen edns0
+
+--- Adicionar No Dns
+echo "options rotate timeout:1 attempts:5 inet use-vc single-request-reopen edns0" >> /etc/resolv.conf
