@@ -1,0 +1,38 @@
+Portas HTTP (CloudFlare) 
+
+>>> 80
+
+>>> 8080
+
+>>> 8880
+
+>>> 2052
+
+>>> 2082
+
+>>> 2086
+
+>>> 2095
+
+HTTP (SOCKS)
+
+-------
+
+lembrando que são portas específicas...
+
+como >>> 80, 8880, 2052 etc...
+
+não será abrindo qualquer porta, que irá conectar de primeira...
+
+(apenas no caso do uso da cloudflare)
+
+------
+
+pra começar, não e um bloqueio de script e bla bla... 
+- basicamente isso esta relacionado, com o limite de cada porta.
+
+exemplo >>> porta 1 [80] Máximo = 500
+
+exemplo >>> porta 2 [2052] Máximo = 500
+
+Totalizando = 1000 conexões TCP
